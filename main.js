@@ -16,20 +16,24 @@ var gladiator = {
             console.log(monster.name + ' HP: ' + monstHP);
 
             monstHP = monstHP - champDmg;
-            champHP = champHP - monstDmg;
-            turn++;
-
             console.log(this.name + ' hits ' + monster.name + ' dealing ' + champDmg + ' damage');
+
+            if (monstHP <= 0) {
+                console.log('~~~~~ ' + this.name + ' wins! ~~~~~');
+                action = false;
+                break;
+            }
+
+            champHP = champHP - monstDmg;
             console.log(monster.name + ' hits ' + this.name + ' dealing ' + monstDmg + ' damage');
 
             if (champHP <= 0) {
                 console.log('~~~~~ ' + monster.name + ' wins! ~~~~~');
                 action = false;
+                break;
             }
-            if (monstHP <= 0) {
-                console.log('~~~~~ ' + this.name + ' wins! ~~~~~');
-                action = false;
-            }
+
+            turn++;
         }
     },
     setAttack: function () {
