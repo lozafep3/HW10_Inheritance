@@ -22,12 +22,12 @@ var gladiator = {
             console.log(this.name + ' hits ' + monster.name + ' dealing ' + champDmg + ' damage');
             console.log(monster.name + ' hits ' + this.name + ' dealing ' + monstDmg + ' damage');
 
-            if (champHP < 0) {
-                console.log(monster.name + ' wins!');
+            if (champHP <= 0) {
+                console.log('~~~~~ ' + monster.name + ' wins! ~~~~~');
                 action = false;
             }
-            if (monstHP < 0) {
-                console.log(this.name + ' wins!');
+            if (monstHP <= 0) {
+                console.log('~~~~~ ' + this.name + ' wins! ~~~~~');
                 action = false;
             }
         }
